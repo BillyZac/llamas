@@ -3,17 +3,20 @@ var knex = require('knex');
 var bodyParser = require('body-parser');
 var app = express();
 
-function Llamas(){
-  return knex('llamas');
-}
-
+// function Llamas(){
+//   return knex('llamas');
+// }
+//
 app.use(bodyParser());
 
-app.get('/llamas',function(req,res,next){
-  r
+app.get('/', function(request, response) {
+  response.send('Hello world.')
+})
+
+app.get('/llamas', function(request, response, next){
+  // Sending the request back to the client.
+  response.send(request.body)
 })
 
 
-app.post('http://localhost:8080/llamas',function(req,res){
-
-})
+app.listen(8080)
